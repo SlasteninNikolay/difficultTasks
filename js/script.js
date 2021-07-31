@@ -15,5 +15,5 @@ for (let i = 0; i < array.length; i++) {
 result = result ** 3;
 
 // Преобразую результат в строку и вывожу в консоль два первых числа.
-result = String(result);
-console.log(Number(result[0]) + result[1]);
+
+console.log(String(result).substring(0, 2));
