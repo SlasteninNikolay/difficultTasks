@@ -11,7 +11,9 @@ let n = 100;
 
 nextPrime: for (let i = 1; i <= n; i++) {
     for (let j = 1; j < i; j++) {
-        if (i % j === 0 && j > 1) continue nextPrime;
+        if (i % j === 0 && j > 1) {
+            continue nextPrime;
+        }
     }
 
     console.log(i);
