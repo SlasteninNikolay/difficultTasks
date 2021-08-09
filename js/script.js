@@ -1,19 +1,20 @@
 "use strict";
 let week = [
-    "воскресенье",
     "понедельник",
     "вторник",
     "среда",
     "четверг",
     "пятница",
     "суббота",
+    "воскресенье",
 ];
 
 let now = new Date();
-let today = week[now.getDay()];
+let lastElem = week.pop();
+week.unshift(lastElem);
 
 for (let i = 0; i < week.length; i++) {
-    if (week[i] === today) {
+    if (week[i] === week[now.getDay()]) {
         let red = week[i];
         red = red.bold();
         week[i] = red;
@@ -23,6 +24,11 @@ for (let i = 0; i < week.length; i++) {
         change = change.italics();
         week[i] = change;
     }
+}
 
-    document.write(week[i] + "</br>");
+let firstElement = week.shift();
+week.push(firstElement);
+
+for (const key in week) {
+    document.write(week[key] + "<br>");
 }
